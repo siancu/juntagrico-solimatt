@@ -1,0 +1,24 @@
+{% extends "mails/email.txt" %}
+{% load i18n %}
+{% load juntagrico.config %}
+{% block content %}
+{% config "enable_shares" as c_enable_shares %}
+{% config "info_email" as c_info_email %}
+{% config "faq_doc" as c_faq_doc %}
+{% config "organisation_name" as c_organisation_name %}
+{% enriched_organisation "D" as v_d_enriched_organisation %}
+{% vocabulary "member_type" as v_member_type %}
+Wir freuen uns, dich bei der SoliLa zu begrüssen.
+
+{% blocktrans %}Um dich auf {{serverurl}} einloggen zu können benutze folgende Daten{% endblocktrans %}:
+{% trans "E-Mail Adresse" %}: {{ member.email }}
+{% trans "Passwort" %}: {{ password }}
+{% blocktrans %}Nutze den Bestätigungslink um deine E-Mail-Adresse zu bestätigen.{% endblocktrans %}
+{% trans "Bestätigungslink" %}: {{ serverurl }}{% url 'confirm' member.get_hash %}
+
+{% blocktrans %}Bei Fragen schreibe eine Mail an {{ c_info_email }}{% endblocktrans %}.
+
+Bis bald und liebe Grüsse
+die SoliLa-Betriebsgruppe
+
+{% endblock %}

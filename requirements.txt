@@ -1,0 +1,4 @@
+#git+http://github.com/juntagrico/juntagrico.git@patch
+juntagrico==1.5.4
+gunicorn==19.7.1
+psycopg2>2.5.1

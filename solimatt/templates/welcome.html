@@ -1,0 +1,15 @@
+{% extends "no_menu_base.html" %}
+{% load i18n %}
+{% load juntagrico.config %}
+{% block all_page_title %}
+    {% enriched_organisation "D" as v_d_enriched_organisation %}
+    <h3 class="page-title">
+        Herzlich willkommen bei der SoliLa!
+    </h3>
+{% endblock %}
+{% block allcontent %}
+    <div class="alert alert-success">
+        <p>Du erhältst eine automatische E-Mail mit allen weiteren Infos an die von dir angegebene E-Mail-Adresse (unsere Mails verirren sich manchmal in den SPAM-Ordner).</p>
+        <p>Über die Details zum Depot und Abo-Start informieren wir dich dann in einem separaten E-Mail, sobald deine Anmeldung von der Betriebsgruppe bearbeitet worden ist. Wir freuen uns auf dich!</p>
+    </div>
+{% endblock %}

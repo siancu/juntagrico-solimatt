@@ -1,0 +1,33 @@
+{% extends "mails/email.txt" %}
+{% load i18n %}
+{% load juntagrico.config %}
+{% block content %}
+{% config "organisation_address" as c_addr %}
+{% config "organisation_bank_connection" as c_bank %}
+{% config "share_price" as c_share_price %}
+{% config "currency" as c_currency %}
+{% config "organisation_name" as c_organisation_name %}
+{% enriched_organisation "D" as v_d_enriched_organisation %}
+{% vocabulary "share" as v_share %}
+{% vocabulary "share_pl" as v_share_pl %}
+{% trans "Hallo" %}
+
+{% blocktrans with sc=shares|length%}Du hast bei der der Genossenschaft SoliLa Euleuhof {{sc}} {{ v_share_pl }} bestellt{% endblocktrans %}:
+{% for share in shares %}{% blocktrans with sid=share.id %}{{ v_share }} mit Systemnummer {{ sid }}{% endblocktrans %}
+{% endfor %}
+{% blocktrans with sc=shares|length %}Bitte überweise {{sc}} Mal den Betrag von {{ c_currency }} {{ c_share_price }} auf das folgende Konto{% endblocktrans %}:
+    {% trans "IBAN" %}: {{ c_bank.IBAN }}
+    {{ c_bank.NAME }}
+
+    Lautend auf:
+    {{ c_addr.name }}
+    {{ c_addr.street }} {{ c_addr.number }}
+    {{ c_addr.zip }} {{ c_addr.city }}
+
+Um die Arbeit der Buchhaltung zu erleichtern zahle bitte nur 1 Anteilschein auf einmal.
+Gib im Betreff die Systemnummer an sowie die E-Mail-Adresse oder den Namen der Halterin oder des Halters des Anteilscheins.
+Letzteres ist vor allem wichtig, wenn du den Anteilschein für jemand anderen bezahlst.
+
+Bis bald und liebe Grüsse
+die SoliLa-Betriebsgruppe
+{% endblock %}
