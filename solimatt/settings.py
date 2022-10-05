@@ -178,19 +178,19 @@ VOCABULARY = {
 ORGANISATION_NAME = "Solimatt"
 ORGANISATION_NAME_CONFIG = {"type": "Verein",
                             "gender": "F"}
-ORGANISATION_LONG_NAME = "Verein Solimatt"
-ORGANISATION_ADDRESS = {"name": "Verein Solimatt",
+ORGANISATION_LONG_NAME = "Solimatt"
+ORGANISATION_ADDRESS = {"name": "Solimatt",
                         "street": "Hof Baselmatt",
                         "number": "21",
                         "zip": "4435",
                         "city": "Niederdorf"}
 ORGANISATION_PHONE = ''
 ORGANISATION_BANK_CONNECTION = {"PC": "0",
-                                "IBAN": "",
+                                "IBAN": "CH93 0839 2000 1595 7030 1",
                                 "BIC": "",
-                                "NAME": "",
+                                "NAME": "Freie Gemeinschaftsbank, Genossenschaft, Meret Oppenheim-Strasse 10, 4002 Basel",
                                 "ESR": ""}
-INFO_EMAIL = "info@solila-eulenhof.ch"
+INFO_EMAIL = "juntagrico@solimatt.ch"
 SERVER_URL = "solimatt.ch"
 BUSINESS_REGULATIONS = ""
 BYLAWS = "https://solila.ch/wordpress/wp-content/uploads/2020/10/Statuten_SoliLa_Genossenschaft.pdf"
